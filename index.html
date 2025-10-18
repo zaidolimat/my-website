@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Math Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero" id="home">
+        <nav class="navbar">
+            <div class="logo">∞ Infinity Math</div>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#lessons">Lessons</a></li>
+                <li><a href="#exercises">Exercises</a></li>
+                <li><a href="#quizzes">Quizzes</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Unlock the Beauty of Mathematics</h1>
+            <p>Interactive lessons, engaging exercises, and smart tools to help every learner master mathematics with confidence.</p>
+            <a class="cta" href="#lessons">Start Learning</a>
+        </div>
+        <div class="floating-formulas" aria-hidden="true">
+            <span>π</span>
+            <span>∑</span>
+            <span>√x</span>
+            <span>E = mc<sup>2</sup></span>
+            <span>a² + b² = c²</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="section lessons" id="lessons">
+            <h2>Interactive Lessons</h2>
+            <p class="section-intro">Explore core mathematics topics with collapsible guides that reveal intuitive explanations, visual aids, and practice prompts.</p>
+            <div class="accordion">
+                <article class="accordion-item" data-topic="algebra">
+                    <button class="accordion-header">Algebra Essentials</button>
+                    <div class="accordion-content">
+                        <h3>Linear Equations</h3>
+                        <p>Understand how to balance equations, isolate variables, and interpret solutions on the coordinate plane.</p>
+                        <ul>
+                            <li>Explore slope-intercept form: <code>y = mx + b</code></li>
+                            <li>Visualize transformations by adjusting <code>m</code> and <code>b</code></li>
+                            <li>Practice translating word problems into algebraic expressions</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="accordion-item" data-topic="geometry">
+                    <button class="accordion-header">Geometry Foundations</button>
+                    <div class="accordion-content">
+                        <h3>Triangles &amp; Circles</h3>
+                        <p>Investigate properties of triangles, similarity, and the powerful relationships within circles.</p>
+                        <ul>
+                            <li>Interactive diagram: drag vertices to observe angle sums</li>
+                            <li>Apply the Pythagorean theorem in real contexts</li>
+                            <li>Understand arc length and sector area using <code>θ</code> in radians</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="accordion-item" data-topic="calculus">
+                    <button class="accordion-header">Calculus Concepts</button>
+                    <div class="accordion-content">
+                        <h3>Rates of Change</h3>
+                        <p>Connect derivatives with motion and optimization, and visualize how integrals accumulate change.</p>
+                        <ul>
+                            <li>Interactive slope explorer: approximate derivatives with secant lines</li>
+                            <li>See how Riemann sums converge to definite integrals</li>
+                            <li>Link calculus ideas to physics, economics, and biology</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section exercises" id="exercises">
+            <h2>Guided Exercises</h2>
+            <p class="section-intro">Solve problems and receive instant feedback. Each exercise checks your reasoning and hints at the next step.</p>
+            <div class="exercise-card" data-answer="12">
+                <h3>Exercise 1: Algebra</h3>
+                <p>Solve for <strong>x</strong>: <code>3x + 6 = 42</code></p>
+                <label for="exercise1">Your Answer</label>
+                <input type="number" id="exercise1" placeholder="Enter x">
+                <button class="check-answer">Check</button>
+                <p class="feedback" aria-live="polite"></p>
+            </div>
+            <div class="exercise-card" data-answer="25">
+                <h3>Exercise 2: Geometry</h3>
+                <p>A right triangle has legs 7 and 24. What is the length of the hypotenuse?</p>
+                <label for="exercise2">Your Answer</label>
+                <input type="number" id="exercise2" placeholder="Enter length">
+                <button class="check-answer">Check</button>
+                <p class="feedback" aria-live="polite"></p>
+            </div>
+            <div class="exercise-card" data-answer="64">
+                <h3>Exercise 3: Exponents</h3>
+                <p>Evaluate <code>4<sup>3</sup></code>.</p>
+                <label for="exercise3">Your Answer</label>
+                <input type="number" id="exercise3" placeholder="Enter value">
+                <button class="check-answer">Check</button>
+                <p class="feedback" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section class="section quizzes" id="quizzes">
+            <h2>Smart Quizzes</h2>
+            <p class="section-intro">Generate a new quiz each time and challenge yourself with multiple-choice questions across algebra, geometry, and calculus.</p>
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <button id="start-quiz">Generate Quiz</button>
+                    <div class="quiz-status" aria-live="polite"></div>
+                </div>
+                <form id="quiz-form" class="quiz-form hidden"></form>
+                <button id="submit-quiz" class="hidden">Submit Answers</button>
+                <p id="quiz-score" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section class="section tools" id="tools">
+            <h2>Mathematics Toolkit</h2>
+            <p class="section-intro">Compute quickly with our built-in calculators designed for common classroom scenarios.</p>
+            <div class="tool-grid">
+                <div class="tool-card" id="basic-calculator">
+                    <h3>Basic Calculator</h3>
+                    <label for="basic-expression">Expression</label>
+                    <input type="text" id="basic-expression" placeholder="e.g. 24 / 6 + 3">
+                    <button class="tool-action" data-action="basic">Evaluate</button>
+                    <p class="tool-output" aria-live="polite"></p>
+                </div>
+                <div class="tool-card" id="scientific-calculator">
+                    <h3>Scientific Calculator</h3>
+                    <label for="scientific-input">Number</label>
+                    <input type="number" id="scientific-input" placeholder="Enter value">
+                    <div class="scientific-buttons">
+                        <button data-fn="sin">sin</button>
+                        <button data-fn="cos">cos</button>
+                        <button data-fn="tan">tan</button>
+                        <button data-fn="log">log</button>
+                        <button data-fn="exp">e<sup>x</sup></button>
+                        <button data-fn="sqrt">√</button>
+                    </div>
+                    <p class="tool-output" aria-live="polite"></p>
+                </div>
+                <div class="tool-card" id="equation-solver">
+                    <h3>Quadratic Equation Solver</h3>
+                    <p>Find the roots of <code>ax² + bx + c = 0</code></p>
+                    <label for="coef-a">a</label>
+                    <input type="number" id="coef-a" value="1">
+                    <label for="coef-b">b</label>
+                    <input type="number" id="coef-b" value="0">
+                    <label for="coef-c">c</label>
+                    <input type="number" id="coef-c" value="0">
+                    <button class="tool-action" data-action="quadratic">Solve</button>
+                    <p class="tool-output" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <h2>Contact &amp; Feedback</h2>
+            <p class="section-intro">We love hearing from learners and educators. Share your feedback or request personalized tutoring support.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+                </div>
+                <button type="submit" class="cta">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Infinity Math Academy. All rights reserved.</p>
+        <div class="social-icons" aria-label="Social media">
+            <a href="#" aria-label="Facebook" class="icon">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M22 12a10 10 0 1 0-11.562 9.874v-6.988H7.898V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.463h-1.261c-1.243 0-1.63.772-1.63 1.562V12h2.773l-.443 2.886h-2.33v6.988A10.002 10.002 0 0 0 22 12Z" />
+                </svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="icon">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M22 5.924a6.486 6.486 0 0 1-1.884.516A3.295 3.295 0 0 0 21.448 4.3a6.572 6.572 0 0 1-2.084.8 3.283 3.283 0 0 0-5.595 2.244 3.36 3.36 0 0 0 .085.75A9.321 9.321 0 0 1 3.112 4.767a3.283 3.283 0 0 0 1.016 4.382 3.268 3.268 0 0 1-1.487-.41v.041a3.286 3.286 0 0 0 2.632 3.218 3.29 3.29 0 0 1-1.482.056 3.286 3.286 0 0 0 3.067 2.28A6.585 6.585 0 0 1 2 17.523 9.29 9.29 0 0 0 7.032 19c6.79 0 10.505-5.623 10.505-10.503 0-.16-.004-.319-.012-.477A7.493 7.493 0 0 0 22 5.924Z" />
+                </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="icon">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                    <path d="M4.983 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5ZM3 9h3.968v12H3V9Zm7.263 0H14.1v1.643h.051c.432-.817 1.49-1.679 3.066-1.679 3.275 0 3.877 2.156 3.877 4.96V21H17.09v-6.03c0-1.439-.027-3.293-2.006-3.293-2.012 0-2.322 1.573-2.322 3.189V21h-3.5V9Z" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
